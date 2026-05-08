@@ -17,7 +17,7 @@ class Ofertas extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(texto, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-            Center(child: Image.asset(imagen, height: 280,)),
+            Center(child: Image.asset(imagen, height: 270,)),
             Text(peque, style: TextStyle(color: Colors.blue, fontSize: 12),)
           ],
         ),
