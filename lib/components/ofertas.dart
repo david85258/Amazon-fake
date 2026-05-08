@@ -11,15 +11,16 @@ class Ofertas extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      width: 250,
-      height: 250,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(texto, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-          Center(child: Image.asset(imagen, height: 180,)),
-          Text(peque, style: TextStyle(color: Colors.blue, fontSize: 12),)
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(texto, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+            Center(child: Image.asset(imagen, height: 280,)),
+            Text(peque, style: TextStyle(color: Colors.blue, fontSize: 12),)
+          ],
+        ),
       ),
     );
   }
