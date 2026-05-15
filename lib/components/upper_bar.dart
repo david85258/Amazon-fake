@@ -1,12 +1,16 @@
 import 'package:amazon_fake/Colors_app.dart';
 import 'package:amazon_fake/components/doble_text.dart';
+import 'package:amazon_fake/pages/main_page.dart';
+import 'package:amazon_fake/pages/result_page.dart';
 import 'package:flutter/material.dart';
 
 class UpperBar extends StatelessWidget {
   const UpperBar({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+    TextEditingController hola = TextEditingController();
     return Container(
       height: 125,
       child: Column(
@@ -56,19 +60,38 @@ class UpperBar extends StatelessWidget {
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(horizontal: 10),
                           ),
+                          controller: hola,
                         ),
                       ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: ColorsApp.search,
-                          borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(5),
-                            topRight: Radius.circular(5),
+                      GestureDetector(
+                        onTap: () {
+                          Widget widget;
+                          if (hola.text == "laptop") {
+                            widget = ResultPage();
+                          } else {
+                            widget = MainPage();
+                          }
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return widget;
+                                },
+                              ),
+                            );
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: ColorsApp.search,
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(5),
+                              topRight: Radius.circular(5),
+                            ),
                           ),
+                          child: Icon(Icons.search, color: Colors.black),
                         ),
-                        child: Icon(Icons.search, color: Colors.black),
                       ),
                     ],
                   ),
